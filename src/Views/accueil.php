@@ -1,49 +1,44 @@
 <?php
-// include_once __DIR__ . '/Includes/header.php';
-
-
-
-// if (isset($_SESSION['error_message0'])) {
-//   echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error_message0'] . '</div>';
-//   unset($_SESSION['error_message0']);
-// }
+include_once __DIR__ . '/Includes/header.php';
 ?>
-<!-- <form action="" id="inscriptionForm" method="post" >
 
-  <fieldset class=" d-flex flex-column "  >
+<!-- Partie de connexion formulaire -->
 
-    <legend>Inscription</legend>
-    <label for="nom">Nom :</label>
-    <input type="text" name="nom" id="nom" required autocomplete="family-name">
-    <label for="prenom">Prénom :</label>
-    <input type="text" name="prenom" id="prenom" required autocomplete="given-name">
-    <label for="email">Email :</label>
-    <input type="email" name="email" id="email" required autocomplete="email">
+<div id="body">
+  <div class="container bg-light p-4  col-md-5 mt-5 shadow-lg p-3 mb-5">
+    <form id="formSignIn" class="d-flex flex-column mb-3" method="post">
+      <div class="text-center">
+        <h2>Bienvenue</h2>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email*</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe*</label>
+        <input type="password" class="form-control" id="password" placeholder="*****">
+      </div>
+      <button type="submit" id="submissionButton" name="submissionButton" class="btn btn-primary">Connexion</button>
+    </form>
+  </div>
+</div>
 
-    <label for="motDePasse">Mot de passe :</label>
-    <input type="password" name="motDePasse" id="motDePasse" min="8" required>
-    <label for="motDePasseVerifier">Verifier le mot de passe :</label>
-    <input type="password" name="motDePasseVerifier" min="8" id="motDePasseVerifier">
-    <span class="password-toggle fw-bold mb-3" id="togglePassword">Voir le MDP</span>
-
-
-    <label for="telephone">Téléphone :</label>
-    <input type="text" name="telephone" id="telephone" required autocomplete="tel">
-    <label for="adresse">Adresse Postale :</label>
-    <input type="text" name="adresse" id="adresse" required autocomplete="address-line1">
-    <div class="d-flex flex-row align-items-baseline my-2">
-      <input type="checkbox" class="me-2" name="RGPD" id="RGPD" enababled>
-      <label for="RGPD">Veuillez accepter les RGPD </label>
+<!-- Partie de connexion confirmation mot de passe -->
+<!-- 
+<div class="container bg-light p-4  col-md-5 mt-5 shadow-lg p-3 mb-5">
+  <form id="form" class="d-flex flex-column mb-3">
+    <div class="text-center">
+      <h2>Bienvenue</h2>
+      <p>Pour clôturer votre inscription et créer votre compte, veuillez choisir un mot de passe!</p>
     </div>
-    <div id="alertMessageRGPD" class="bg-danger text-white mb-3"></div>
-    <div class="d-flex justify-content-between">
-      <!-- <p class="btn btn-warning" id="btnPrecedent2">Précédent</p> -->
-      <!-- <input type="submit" name="soumission" class="btn btn-success" disabled id="btnInscrire" value="S'inscrire" onclick="calculateTotalPrice()">
+    <div id="confirmationMotDePasse" class="mb-3">
+      <label for="motdepasse" class="form-label">Mot de passe*</label>
+      <input type="password" class="form-control" id="motdepasse" placeholder="*****">
     </div>
-  </fieldset> -->
-</form> -->
-
-<?php
-// include_once __DIR__ . '/Includes/footer.php';
-
-?>
+    <div class="mb-3">
+      <label for="confirmationmotdepasse" class="form-label">Confirmez mot de passe*</label>
+      <input type="password" class="form-control" id="confirmationmotdepasse" placeholder="*****">
+    </div>
+    <button type="submit" class="btn btn-primary">Connexion</button>
+  </form>
+</div> -->

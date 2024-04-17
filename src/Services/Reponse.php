@@ -18,16 +18,3 @@ trait Reponse {
     include_once __DIR__ . '/../Views/'. $view . ".php";
   }
 }
-<?php
-
-namespace src\Services;
-
-trait Reponse {
-    public function render(string $view, array $data = []) {
-        
-        $section = $data['section'] ?? '';
-        $action = $data['action'] ?? '';
-
-        include_once __DIR__ . '/../Views/'. $view . ".php";
-    }
-}

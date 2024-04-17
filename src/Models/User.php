@@ -2,11 +2,8 @@
 
 namespace src\Models;
 
-use DateTime;
-use src\Services\Hydratation;
+class User{
 
-class User
-{
     private $userID;
     private  $firstname;
     private $lastname;
@@ -15,15 +12,9 @@ class User
     private $email;
     private $role;
 
-    use Hydratation;
-
     public function getUserID(): int
     {
         return $this->userID;
-    }
-    public function setUserID(int $userID)
-    {
-        $this->userID = $userID;
     }
 
     public function getFirstname(): string

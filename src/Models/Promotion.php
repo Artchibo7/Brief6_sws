@@ -2,52 +2,52 @@
 
 namespace src\Models;
 
-use DateTime;
-use src\Services\Hydratation;
+class Promotion{
 
-class Promotion
-{
     private $promotionID;
+    private $nomPromotion;
     private $dateDebut;
     private $dateFin;
-    private $placeDisponible;
-
-    use Hydratation;
+    private $placeDisponilbe;
 
     public function getPromotionID(): int
     {
         return $this->promotionID;
     }
-    public function setPromotionID(int $promotionID)
+
+    public function getNomPromotion(): string
     {
-        $this->promotionID = $promotionID;
+        return $this->nomPromotion;
+    }
+    public function setNomPromotion(string $nomPromotion)
+    {
+        $this->nomPromotion = $nomPromotion;
     }
 
-    public function getDateDebut(): DateTime
+    public function getDateDebut(): string
     {
         return $this->dateDebut;
     }
-    public function setDateDebut(DateTime $dateDebut)
+    public function setDateDebut(string $dateDebut)
     {
         $this->dateDebut = $dateDebut;
     }
 
-    public function getDateFin(): DateTime
+    public function getDateFin(): string
     {
         return $this->dateFin;
     }
-    public function setDateFin(DateTime $dateFin)
+    public function setDateFin(string $dateFin)
     {
         $this->dateFin = $dateFin;
     }
 
-    public function getPlaceDisponible(): int
+    public function getPlaceDisponilbe(): int
     {
-        return $this->placeDisponible;
+        return $this->placeDisponilbe;
     }
-    public function setPlaceDisponible(int $placeDisponible)
+    public function setPlaceDisponilbe(int $placeDisponilbe)
     {
-        $this->placeDisponible = $placeDisponible;
+        $this->placeDisponilbe = $placeDisponilbe;
     }
-
 }

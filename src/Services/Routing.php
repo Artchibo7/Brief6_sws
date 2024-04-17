@@ -4,8 +4,12 @@ namespace src\Services;
 
 final class Routing
 {
-  public static function routeComposee(string $route): array
+  public static function routeComposee(?string $route): array
   {
+    if ($route === null) {
+        return [];
+    }
+
     $routeComposee = ltrim($route, HOME_URL);
     $routeComposee = rtrim($routeComposee, '/');
     $routeComposee = explode('/', $routeComposee);

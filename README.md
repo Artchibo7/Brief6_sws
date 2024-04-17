@@ -1,85 +1,54 @@
-# Site-de-r-servation-pour-le-Music-Vercors-Festival
+## README - Application de Gestion des Formateurs et Apprentis.
 
-# Site-de-r-servation-pour-le-Music-Vercors-Festival
+Description
+Cette application est conçue pour gérer les formateurs, les promotions et les apprentis. Elle permet d'ajouter, de modifier et de supprimer des formateurs, des promotions ainsi que des apprentis.
 
+Technologies utilisées
+JavaScript
+PHP
+MySQL (pour la base de données)
+Prérequis
+Avant de commencer à utiliser l'application, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-README - Formulaire de Réservation avec MVC.
+Serveur web (Apache, Nginx, etc.)
+PHP (version 7 ou supérieure)
+MySQL (ou un autre système de gestion de base de données)
+Installation
+Clonez ce dépôt sur votre machine :
+bash
+Copy code
+git clone <URL_DU_DÉPÔT>
+Importez le fichier de base de données database.sql dans votre système de gestion de base de données MySQL.
+Configurez les informations de connexion à la base de données dans le fichier config.php.
+Démarrez votre serveur web.
+Utilisation
+Accédez à l'application via votre navigateur web en ouvrant le fichier index.html.
+Utilisez le formulaire pour ajouter, modifier ou supprimer des formateurs, des promotions et des apprentis.
+Assurez-vous de remplir tous les champs obligatoires dans les formulaires.
+Vous pouvez activer ou désactiver un compte apprenti en modifiant son statut.
+Les rôles des apprentis peuvent être définis comme nécessaire (par exemple, apprenti, administrateur, etc.).
+Les apprentis ont la responsabilité de valider leur présence. S'ils ne font aucune action dans les 15 minutes suivant le début de la session, ils seront considérés comme absents automatiquement.
+Fonctionnalités
+Formateurs
+Ajouter un formateur avec son nom, prénom, spécialité.
+Modifier les détails d'un formateur existant.
+Supprimer un formateur de la base de données.
+Promotions
+Ajouter une promotion avec son nom, sa date de début, sa date de fin et le nombre de places disponibles.
+Modifier les détails d'une promotion existante.
+Supprimer une promotion de la base de données.
+Apprentis
+Ajouter un apprenti avec son nom de famille, son prénom, son adresse e-mail et son rôle.
+Activer ou désactiver le compte d'un apprenti.
+Modifier les détails d'un apprenti existant.
+Supprimer un apprenti de la base de données.
+Mise en ligne
+Pour mettre en ligne cette application, vous pouvez suivre les étapes suivantes :
 
-Ce projet est une application de réservation développée en utilisant le modèle MVC (Modèle-Vue-Contrôleur) avec PHP, MySQL et JavaScript. Le but de ce document est de fournir des instructions pour l'installation, la configuration et l'utilisation de l'application.
+Hébergez les fichiers de l'application sur votre serveur web.
+Importez la base de données sur votre serveur MySQL.
+Assurez-vous que les informations de connexion à la base de données dans le fichier config.php sont correctes pour votre environnement de production.
+Assurez-vous que les permissions de fichiers et de répertoires sont correctement configurées pour garantir la sécurité de l'application.
+Auteur
+Ce projet a été réalisé par [Votre Nom].
 
-Développement.
-
-Architecture MVC.
-
-L'application suit le modèle MVC (Modèle-Vue-Contrôleur) pour assurer une séparation claire des responsabilités :
-
-Modèle: Le modèle est responsable de l'accès aux données et de leur manipulation. Les modèles interagissent avec la base de données pour récupérer et stocker les données.
-
-Vue: La vue est responsable de l'interface utilisateur. Elle affiche les données au format approprié et récupère les entrées de l'utilisateur.
-
-Contrôleur: Le contrôleur agit comme un intermédiaire entre le modèle et la vue. Il récupère les entrées de l'utilisateur depuis la vue, traite les actions demandées, et communique avec le modèle pour effectuer les opérations sur les données.
-
-
-Structure du Projet.
-
-index.php: Le point d'entrée de l'application. C'est là où la vue est affichée et où les contrôleurs sont appelés.
-
-config/database.php: Fichier de configuration contenant les paramètres de connexion à la base de données.
-
-controllers/: Ce répertoire contient les contrôleurs de l'application.
-
-models/: Ce répertoire contient les modèles de données utilisés par l'application.
-
-views/: Ce répertoire contient les fichiers de vue utilisés pour afficher l'interface utilisateur.
-
-assets/: Ce répertoire contient les fichiers statiques tels que les fichiers CSS, JavaScript, etc.
-
-
-Sécurité.
-
-Il est essentiel de maintenir la sécurité de l'application. Voici quelques mesures de sécurité à prendre en compte :
-
-Validation des données: Toujours valider les données côté client et côté serveur pour éviter les attaques par injection de code malveillant.
-
-Protection contre les attaques XSS: Échapper les données affichées dans les vues pour éviter les attaques par injection de scripts.
-
-Protection contre les injections SQL: Utiliser des requêtes préparées ou des fonctions d'échappement pour éviter les injections SQL.
-
-
-Rôles Utilisateur et Administrateur.
-
-Dans ce projet, deux rôles principaux sont définis : utilisateur et administrateur.
-
-Utilisateur : Les utilisateurs peuvent accéder à l'interface de réservation, soumettre de nouvelles réservations et afficher les réservations existantes. Ils ont des fonctionnalités limitées par rapport aux administrateurs.
-
-Administrateur : Les administrateurs ont un accès étendu à l'application. Ils peuvent non seulement effectuer toutes les actions d'un utilisateur standard, mais aussi gérer les réservations existantes, ajouter de nouveaux utilisateurs, modifier les paramètres système, etc.
-
-Gestion des Rôles.
-L'attribution des rôles est gérée dans la base de données. Chaque utilisateur est associé à un rôle spécifique, qui détermine ses privilèges dans l'application.
-
-Création d'un nouvel Utilisateur.
-Lorsqu'un nouvel utilisateur est ajouté à l'application, un administrateur peut définir son rôle en tant qu'utilisateur ou administrateur.
-
-Authentification et Autorisation
-L'authentification est le processus par lequel les utilisateurs sont identifiés en fonction de leurs informations d'identification (nom d'utilisateur et mot de passe). Une fois authentifiés, l'autorisation détermine les actions spécifiques qu'un utilisateur est autorisé à effectuer en fonction de son rôle.
-
-Fonctionnalités Administratives.
-
-Les fonctionnalités administratives incluent, mais ne se limitent pas à :
-
-Gestion des utilisateurs : Ajout, modification et suppression des comptes utilisateur.
-
-Gestion des réservations : Affichage, modification et suppression des réservations existantes.
-
-Configuration système : Modification des paramètres de l'application, gestion des préférences, etc.
-
-Sécurité des Rôles.
-
-Il est essentiel de maintenir la sécurité des rôles dans l'application. Voici quelques mesures de sécurité à prendre en compte :
-
-Assurer que seuls les utilisateurs autorisés ont accès aux fonctionnalités administratives.
-
-Limiter les accès des utilisateurs en fonction de leur rôle pour éviter les abus de privilèges.
-
-
-# Ce projet a été développé par Feras Altaleb et Arthur Zulpukharov.

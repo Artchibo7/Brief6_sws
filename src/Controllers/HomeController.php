@@ -21,7 +21,7 @@ class HomeController {
   }
 
   public function auth() {
-   
+
     $request = file_get_contents('php://input');
 
     if ($request) {
@@ -35,20 +35,18 @@ class HomeController {
           $_SESSION['role'] = 'formateur';
 
           var_dump($_SESSION['role']);
-          // var_dump($_SESSION['connecté']);
 
           include_once __DIR__ . '/../Views/dashboard.php';
-          
         } else {
           exit();
         }
+      }
+    }
   }
-}
-}
 
-public function showDashboard(){
-  include_once __DIR__ . '/../Views/dashboard.php';
-}
+  public function showDashboard() {
+    include_once __DIR__ . '/../Views/dashboard.php';
+  }
 
   public function quit() {
     session_destroy();
@@ -61,5 +59,3 @@ public function showDashboard(){
     $this->render('404');
   }
 }
-
-

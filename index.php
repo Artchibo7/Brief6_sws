@@ -1,4 +1,4 @@
 <?php
-echo "vouz faite quoi là!";
+echo "Hors de ma vue!";
 
 header('location: /public/');

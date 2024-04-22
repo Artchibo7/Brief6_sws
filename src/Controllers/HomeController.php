@@ -3,21 +3,15 @@
 namespace src\Controllers;
 
 use src\Repositories\UserRepository;
-use src\Services\Reponse;
+use src\Repositories\PromotionRepository;
 
 class HomeController {
 
-  use Reponse;
-
-  private $userRepository;
-
-  public function __construct(UserRepository $userRepository) {
-    $this->userRepository = $userRepository;
-  }
+  // use Reponse;
 
   public function index(): void {
-    $erreur = $_GET['erreur'] ?? '';
-    $this->render("accueil", ["erreur" => $erreur]);
+
+    include_once __DIR__ . "/../Views/connexion.php";
   }
 
   public function auth() {
@@ -50,12 +44,12 @@ class HomeController {
 
   public function quit() {
     session_destroy();
-    header('location: ' . HOME_URL);
-    die();
+    $_SESSION["connecté"] = false;
+    include_once __DIR__ . "/../Views/connexion.php";
   }
 
   public function page404(): void {
     header("HTTP/1.1 404 Not Found");
-    $this->render('404');
+    include_once __DIR__ . "/../Views/404.php";
   }
 }
